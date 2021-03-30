@@ -108,24 +108,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3: TweetDeck"
-set $ws4 "4: Social"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
-# Define monitor number for my desktop environment
-set $mon1 DP-3
-set $mon2 DP-1
-set $mon3 HDMI-1
-workspace $ws1 output $mon1
-workspace $ws2 output $mon2
-workspace $ws3 output $mon3
+set $ws1 "1: TweetDeck"
+set $ws2 "2: Social"
+set $ws3 "3: Meeting"
+set $ws4 "4: DevBrowser1"
+set $ws5 "5: DevMain1"
+set $ws6 "6: DevSub1"
+set $ws7 "7: DevBrowser2"
+set $ws8 "8: DevMain2"
+set $ws9 "9: DevSub2"
+set $ws10 "10: Relax"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -228,7 +220,7 @@ floating_maximum_size 640 x 480
 # exec social on boot
 exec slack
 exec discord
-exec /opt/google/chrome/google-chrome --force-device-scale-factor=1 --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl
-assign [class="Slack"] $ws4
-assign [class="discord"] $ws4
-assign [instance="^crx_hbdpomandigafcibbmofojjchbcdagbl$"] $ws3
+exec /opt/google/chrome/google-chrome "--profile-directory=Profile 1" --app-id=hbdpomandigafcibbmofojjchbcdagbl
+assign [class="Slack"] $ws2
+assign [class="discord"] $ws2
+assign [instance="^crx_hbdpomandigafcibbmofojjchbcdagbl$"] $ws1
