@@ -112,7 +112,7 @@ set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3: TweetDeck"
 set $ws4 "4: Social"
-set $ws5 "5"
+set $ws5 "5: Tasks"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -123,9 +123,11 @@ set $ws10 "10"
 set $mon1 DP-3
 set $mon2 DP-1
 set $mon3 HDMI-1
-workspace $ws1 output $mon1
-workspace $ws2 output $mon2
+workspace $ws1 output $mon2
+workspace $ws2 output $mon1
 workspace $ws3 output $mon3
+workspace $ws4 output $mon3
+workspace $ws5 output $mon3
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -229,6 +231,8 @@ floating_maximum_size 640 x 480
 exec slack
 exec discord
 exec /opt/google/chrome/google-chrome --force-device-scale-factor=1 --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl
+exec /opt/google/chrome/google-chrome --force-device-scale-factor=1 --profile-directory=Default --new-window --app=https://trello.com/b/QSRazbny/%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86
 assign [class="Slack"] $ws4
 assign [class="discord"] $ws4
 assign [instance="^crx_hbdpomandigafcibbmofojjchbcdagbl$"] $ws3
+assign [instance="^trello.com__b_QSRazbny_%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86$"] $ws5
