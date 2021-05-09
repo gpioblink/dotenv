@@ -58,4 +58,5 @@ export DefaultImModule=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
+exec /usr/lib/polkit-kde-authentication-agent-1
 exec i3
