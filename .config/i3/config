@@ -110,14 +110,15 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: TweetDeck"
 set $ws2 "2: Social"
-set $ws3 "3: Meeting"
-set $ws4 "4: DevBrowser1"
-set $ws5 "5: DevMain1"
-set $ws6 "6: DevSub1"
-set $ws7 "7: DevBrowser2"
-set $ws8 "8: DevMain2"
-set $ws9 "9: DevSub2"
-set $ws10 "10: Relax"
+set $ws3 "3: ToDo"
+set $ws4 "4: Meeting"
+set $ws5 "5: DevBrowser1"
+set $ws6 "6: DevMain1"
+set $ws7 "7: DevSub1"
+set $ws8 "8: DevBrowser2"
+set $ws9 "9: DevMain2"
+set $ws10 "10: DevSub2"
+set $ws11 "11: relax"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -217,15 +218,31 @@ exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55
 floating_minimum_size 75 x 50
 floating_maximum_size 640 x 1000
 
+# Launch update
+exec xfce4-terminal -e "echo Let\'s update system on boot... && yay -Suyyy --noconfirm --sudoloop"
+
 # exec social on boot
 exec slack
 exec discord
+
+## Launch favorite apps on boot
+
 exec mattermost-desktop
 exec /opt/google/chrome/google-chrome "--profile-directory=Profile 1" --app-id=hbdpomandigafcibbmofojjchbcdagbl
+exec /opt/google/chrome/google-chrome "--profile-directory=Profile 1" --new-window --app=https://trello.com/b/QSRazbny/%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86
+exec /opt/google/chrome/google-chrome "--profile-directory=Profile 1" --new-window --app=https://www.facebook.com
+
+# Show TweetDeck on WS1
+assign [instance="^crx_hbdpomandigafcibbmofojjchbcdagbl$"] $ws1
+
+# Show well-known social app on ws2
 assign [class="Slack"] $ws2
 assign [class="discord"] $ws2
 assign [class="mattermost"] $ws2
-assign [instance="^crx_hbdpomandigafcibbmofojjchbcdagbl$"] $ws1
+assign [instance="^www.facebook.com$"] $ws2
+
+# Show Task Management Tooks on ws3
+assign [instance="^trello.com__b_QSRazbny_%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86$"] $ws3
 
 # Review the lines below and append to ~/.config/i3/config
 
